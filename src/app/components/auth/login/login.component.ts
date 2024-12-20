@@ -35,11 +35,19 @@ export class LoginComponent implements OnInit {
             next: (users: User[]) => {
                 if (users.length === 0) {
                     alert('Invalid username or password.');
+                    this.loginForm.enable();
                     return;
                 }
                 this.authService.user = users[0];
                 this.authService.saveUser();
-                this.router.navigate(['/calendar']);
+                this.router
+                    .navigate(['/calendar'])
+                    .then(() => {
+                        console.log('Navigation to /calendar was successful');
+                    })
+                    .catch((err) => {
+                        console.error('Navigation failed: ', err);
+                    });
             },
             error: () => {
                 alert('Error during the request.');

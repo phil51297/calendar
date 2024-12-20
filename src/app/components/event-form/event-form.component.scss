@@ -1,0 +1,130 @@
+.container {
+    max-width: 80%;
+    margin: 50px auto; // Centering the container with space at the top
+    padding: 40px 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 768px) {
+        max-width: 95%;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #343a40;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .text-end {
+        margin-bottom: 30px; // Adjusted space between button and table
+        display: flex;
+        justify-content: flex-end;
+
+        .btn {
+            font-size: 1.1rem;
+            padding: 12px 25px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+
+            &.btn-success {
+                background-color: #28a745;
+                border: none;
+                color: #fff;
+
+                &:hover {
+                    background-color: #218838;
+                }
+            }
+        }
+    }
+
+    form {
+        width: 100%; // Ensure the form takes full width
+        display: grid;
+        gap: 20px; // Create space between form fields
+        grid-template-columns: 1fr; // Single column layout for the form
+
+        label {
+            font-size: 1rem;
+            color: #343a40;
+            font-weight: 500;
+            margin-bottom: 8px; // Space between label and input
+        }
+
+        input {
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box; // Ensures padding is within the element's width
+            background-color: #fff;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                border-color: #007bff;
+                outline: none;
+            }
+        }
+
+        .btn {
+            font-size: 1.1rem;
+            padding: 12px 25px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #218838;
+            }
+        }
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+        border-radius: 8px;
+        margin-top: 40px;
+        overflow: hidden; // Ensures rounded corners are respected
+
+        thead {
+            background-color: #007bff;
+            color: white;
+
+            th {
+                padding: 12px;
+                text-align: left;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+        }
+
+        tbody {
+            tr {
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: #f1f1f1;
+                }
+
+                td {
+                    padding: 12px;
+                    text-align: left;
+                    vertical-align: middle;
+                    font-size: 1rem;
+                    color: #333;
+                    border-bottom: 1px solid #ddd; // Subtle border to separate rows
+                }
+            }
+        }
+    }
+}

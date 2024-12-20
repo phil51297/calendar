@@ -1,0 +1,76 @@
+.container {
+    max-width: 90%;
+    margin: -400px auto;
+    padding: 20px;
+
+    @media (max-width: 768px) {
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #343a40;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .text-end {
+        margin-bottom: 15px;
+
+        .btn {
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+
+            &.btn-success {
+                background-color: #28a745;
+                border: none;
+                color: #fff;
+
+                &:hover {
+                    background-color: #218838;
+                }
+            }
+        }
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-radius: 8px;
+
+        thead {
+            background-color: #007bff;
+            color: white;
+
+            th {
+                padding: 12px;
+                text-align: left;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+        }
+
+        tbody {
+            tr {
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: #f1f1f1;
+                }
+
+                td {
+                    padding: 12px;
+                    text-align: left;
+                    vertical-align: middle;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

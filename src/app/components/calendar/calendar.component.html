@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>My Events</h2>
+    <div class="text-end">
+        <a routerLink="/add-event/0" class="btn btn-success">Add an event</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let event of events; let i = index" appHighlight>
+                <td>{{ i + 1 }}</td>
+                <td>{{ event.title }}</td>
+                <td>{{ event.description }}</td>
+                <td>{{ event.date | customDate }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
