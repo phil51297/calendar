@@ -10,14 +10,29 @@
                 <th>Title</th>
                 <th>Description</th>
                 <th>Date</th>
+                <th>Category</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let event of events; let i = index" appHighlight>
+            <tr
+                *ngFor="let event of events; let i = index"
+                appHighlight
+                (click)="editEvent(event)"
+            >
                 <td>{{ i + 1 }}</td>
                 <td>{{ event.title }}</td>
                 <td>{{ event.description }}</td>
                 <td>{{ event.date | customDate }}</td>
+                <td>{{ event.categoryName }}</td>
+                <td>
+                    <button
+                        class="btn btn-danger"
+                        (click)="deleteEvent(event.id, $event)"
+                    >
+                        Delete
+                    </button>
+                </td>
             </tr>
         </tbody>
     </table>

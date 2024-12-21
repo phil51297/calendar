@@ -27,34 +27,21 @@ export class AuthService {
 
     signOut(): void {
         this.user = null;
-        localStorage.removeItem('currentUserId');
+        localStorage.removeItem('user');
     }
 
     saveUser(): void {
         if (this.user?.id) {
-            localStorage.setItem('currentUserId', String(this.user.id));
+            localStorage.setItem('user', String(this.user.id));
         }
     }
 
     retrievePersistedUser(): string | null {
-        return localStorage.getItem('currentUserId');
+        return localStorage.getItem('user');
     }
 
     isLoggedIn(): boolean {
-        if (this.user) {
-            this.saveUser();
-            return true;
-        }
-
-        const savedUserId = this.retrievePersistedUser();
-        if (savedUserId) {
-            this.fetchUserById(savedUserId).subscribe((users: User[]) => {
-                this.user = users[0] || null;
-            });
-            return true;
-        }
-
-        return false;
+        return localStorage.getItem('user') !== null;
     }
 
     private fetchUserById(userId: string): Observable<User[]> {

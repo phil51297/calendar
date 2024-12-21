@@ -22,6 +22,15 @@ const routes: Routes = [
         path: 'add-event/:id',
         component: EventFormComponent,
     },
+    {
+        path: '',
+        redirectTo: '/calendar',
+        pathMatch: 'full',
+    },
+    {
+        path: '**',
+        redirectTo: '/calendar',
+    },
 ];
 
 @NgModule({
